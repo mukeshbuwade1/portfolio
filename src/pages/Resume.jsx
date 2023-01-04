@@ -10,7 +10,7 @@ const Resume = () => {
                 <SecondaryHeader title={"RESUME"} />
                 <div className="btnContainer" >
                     <p className="Experience">Experience</p>
-                    <NavLink to = "/login">
+                    <NavLink to="/login">
                         <button >
                             Dowanload CV
                         </button>
@@ -18,6 +18,7 @@ const Resume = () => {
 
                 </div>
                 <Experionce
+                    company_logo={"../images/nrt-logo.png"}
                     time={"Oct2021 - Present"}
                     position={"Jr. React Native Developer"}
                     componyName={"NewRise Technosys Pvt Ltd"}

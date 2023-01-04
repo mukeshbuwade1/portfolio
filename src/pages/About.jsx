@@ -5,10 +5,9 @@ import { LinkedIn, Facebook, WhatsApp, Instagram } from "@material-ui/icons"
 
 
 const About = () => {
-    return (    
+    return (
         <div className="aboutCountainer">
-            <div className="absolutebg" >
-            </div>
+            <div className="absolutebg" ></div>
             <div className="mainView">
                 <div className="leftView">
                     <div className="userImageContainer">
@@ -30,11 +29,11 @@ const About = () => {
                 <div className="rightView">
                     <h1 className="hello">Hello</h1>
                     <h3 className="subline">Here's who I am & what I do</h3>
-                    <div style={{ margin: "30px 0" }}>
+                    <div className="home_btn_container">
                         <button > RESUME </button>
                         <button > PROJECTS </button>
                     </div>
-                    <p style={{ fontSize: "15px", fontWeight: "100", }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done
+                    <p style={{ fontSize: "15px", fontWeight: "100",textAlign:"justify" }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done
                     </p>
                 </div>
             </div>

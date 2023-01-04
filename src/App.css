@@ -1,3 +1,4 @@
+/* ok  */
 .App {
   width: 100%;
   height: 100vh;
@@ -8,7 +9,8 @@
 .demo {
   flex-direction: row;
 }
-.custom-nav-style{
+
+.custom-nav-style {
   border: 2px solid red;
 }
 
@@ -82,19 +84,19 @@ p {
 /* about or home page ------------------------------------------ */
 .aboutCountainer {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid;
-
+  background-color: #E6DACE;
+  /* position: relative; */
 }
 
 .absolutebg {
   position: absolute;
   background-color: #fff;
   height: 100vh;
-  width: 60%;
+  width: 10%;
   right: 0;
   top: 0;
 }
@@ -103,7 +105,6 @@ p {
   z-index: 10;
   display: flex;
   flex-direction: row;
-  border: 1px solid;
   margin-top: 70px;
 }
 
@@ -120,7 +121,8 @@ p {
 
 .leftView {
   width: 400px;
-  background-color: #f5ece1;
+  /* background-color: #f5ece1; */
+  background-color: #e6dace;
   padding-top: 50px;
   display: flex;
   flex-direction: column;
@@ -157,6 +159,10 @@ p {
 .subline {
   font-size: 20px;
   font-weight: 400;
+}
+
+.home_btn_container {
+  margin: 30px 0;
 }
 
 button {
@@ -199,7 +205,7 @@ button:hover {
 
 /* footer -------------------------------------------------------------- */
 .footercontainer {
-  /* border: 1px solid; */
+  flex-direction: row;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
@@ -211,6 +217,7 @@ button:hover {
 }
 
 .copyright {
+
   font-family: 'Courier Prime', monospace;
   margin: 0px;
   font-size: 12px;
@@ -218,6 +225,7 @@ button:hover {
 }
 
 .footerright {
+  flex-direction: row;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -235,8 +243,13 @@ button:hover {
   /* border: 1px solid; */
 }
 
+.footer_icons {
+  display: flex;
+  flex-direction: column;
+}
+
 /* resume ---------------------------------------------------------------------- */
-.ResumeCountainer {
+/* .ResumeCountainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,8 +257,10 @@ button:hover {
   padding-top: 150px;
   width: 100%;
   padding-bottom: 20px;
-  background-color: #e6dace;
-}
+   background-color: #e6dace;
+  background-color: #000;
+
+} */
 
 .mainViewForResume {
   width: 50%;
@@ -263,17 +278,16 @@ button:hover {
 
 .btnContainer {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: 20px;
-  margin: 0;
 }
 
 .Experience {
   font-size: 25px;
   font-weight: 700;
+  margin-bottom: 0;
 }
 
 .experionceContainer {
@@ -284,12 +298,22 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 100px;
-
   box-shadow: -20px 20px 30px #0002;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-logo-on-card {
+  position: absolute;
+  max-width: 60%;
+  max-height: 60%;
+  opacity: 0.1;
+  /* z-index: -10; */
 }
 
 .ComponyInfo {
   width: 30%;
+
 }
 
 .RoleInfo {
@@ -307,60 +331,113 @@ button:hover {
 }
 
 @media only screen and (min-width: 600px) {
+
   /* ------------------------------------------------home or about page ------------------------------------------------------ */
-  .absolutebg {   
-    width: 80%;   
+  .absolutebg {
+    width: 60%;
   }
 }
 
 @media only screen and (max-width: 600px) {
+
   /* ------------------------------------------------home or about page ------------------------------------------------------ */
-  .absolutebg {   
-    width: 95%;   
+  .absolutebg {
+    width: 95%;
   }
 
-  
-.mainView {
-  flex-direction: column;
-  margin-top: 70px;
-}
+  .aboutCountainer {
+    background-color: #fff;
+  }
 
-.userImageContainer {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+  .mainView {
+    flex-direction: column;
+    margin-top: 120px;
+    width: 90%;
+    margin-bottom: 70px;
+  }
 
-.userImage {
-  width: 200px;
-}
+  .userImageContainer {
+    width: 150px;
+    height: 150px;
+  }
 
-.leftView {
-  width: 400px;
-  background-color: #f5ece1;
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: -20px 20px 40px #0003;
-  /* border: 1px solid; */
-}
+  .userImage {
+    width: 150px;
+  }
 
-.rightView {
-  width: 400px;
-  padding-left: 30px;
-  /* border: 1px solid; */
+  .leftView {
+    width: 100%;
+  }
 
-}
+  .rightView {
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 30px;
+  }
 
-.socialIconContainer {
-  width: 100%;
-  height: 50px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .hello {
+    font-size: 3rem;
+  }
 
+  .hr {
+    margin: 0;
+  }
+
+  button {
+    margin-right: 0;
+  }
+
+  .home_btn_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /*------------------ footer styles  --------------------------------------*/
+  .footercontainer {
+    flex-direction: column;
+    border-top: 1px solid #f5ece1;
+  }
+
+  .footerright {
+    flex-direction: column;
+    /* margin-top: 10px; */
+  }
+
+  .footer_icons {
+    display: none;
+  }
+
+  .footerHeading {
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+
+
+  /*----------------------- resume view style ------------------------ */
+  .mainViewForResume {
+    width: 90%;
+    border: 1px solid;
+  }
+
+  .resume {
+    font-size: 25px;
+  }
+
+  .Experience {
+    font-size: 20px;
+  }
+
+  .btnContainer {
+    width: 100%;
+  }
+
+  .experionceContainer {
+    width: 100%;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .ComponyInfo {
+    width: 100%;
+  }
 }

@@ -9,7 +9,6 @@ const Footer = () => {
                 <p className="copyright">&#169; 2022 by Mukesh Buwade</p>
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     <p className="copyright">Proudly created with &hearts;</p>
-                    {/* <FavoriteIcon/> */}
                 </div>
             </div>
             <div className="footerright">
@@ -21,7 +20,7 @@ const Footer = () => {
                     <p className="footerHeading">Write</p>
                     <p className="copyright">mukesh@newrise.in</p>
                 </div>
-                <div>
+                <div className="footer_icons">
                     <p className="footerHeading">Follow</p>
                     <div className="iconBox">
                         <LinkedIn />

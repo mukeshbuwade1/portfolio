@@ -17,9 +17,9 @@ import Component from './components/Component';
 const name = "mukesh"
 function App() {
   return (
+    // <Resume />
     <div >
-      <About />
-      {/* <Router >
+      <Router >
         <Header />
         <Routes>
           <Route path="/" element={<About />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path='/login' element={Login} />
         </Routes>
         <Footer />
-      </Router>  */}
+      </Router> 
     </div>
   );
 }
