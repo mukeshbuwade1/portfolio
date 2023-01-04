@@ -1,12 +1,19 @@
-.App{
- width: 100%;
- height: 100vh;
+.App {
+  width: 100%;
+  height: 100vh;
   /* background: "#E6DACE"; */
-  background-color: #e6dace;
+  background-color: #E6DACE;
+}
+
+.demo {
+  flex-direction: row;
+}
+.custom-nav-style{
+  border: 2px solid red;
 }
 
 /* common------------------------- */
-#basecontainer{
+#basecontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,11 +21,16 @@
   padding-top: 100px;
   width: 100%;
   padding-bottom: 20px;
-  background-color: #e6dace;
+  background-color: #E6DACE;
+}
+
+p {
+  color: rgb(41, 41, 41);
+  font-weight: 100;
 }
 
 /* header______________________________________________________ */
-.headerCountainer{
+.headerCountainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,19 +41,25 @@
   background-color: #fff;
   z-index: 10;
   position: fixed;
-  width: 90%;
+  width: 100%;
   min-height: 100px;
   /* background-color: red; */
   z-index: 999;
 
 }
-.menuContainer{
+
+.menuContainer {
   display: flex;
   flex-direction: row;
-  
+
 
 }
-.menuItems{
+
+.logoContainer {
+  font-weight: 700;
+}
+
+.menuItems {
   padding: 0.8rem;
   margin: 0.3;
   font-weight: 100;
@@ -50,45 +68,57 @@
   text-decoration: none;
   color: #000;
 }
-.activeMenuItems{
-  color:#c5905a
+
+.activeMenuItems {
+  padding: 0.8rem;
+  margin: 0.3;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #c5905a
 }
+
 /* about or home page ------------------------------------------ */
-.aboutCountainer{
+.aboutCountainer {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid; */
-  
+  border: 1px solid;
+
 }
-.absolutebg{
+
+.absolutebg {
   position: absolute;
   background-color: #fff;
   height: 100vh;
   width: 60%;
   right: 0;
   top: 0;
-  
-  /* bottom: 0; */
-  
 }
-.mainView{
+
+.mainView {
   z-index: 10;
   display: flex;
   flex-direction: row;
+  border: 1px solid;
+  margin-top: 70px;
 }
-.userImageContainer{
+
+.userImageContainer {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  overflow :hidden;
+  overflow: hidden;
 }
-.userImage{
+
+.userImage {
   width: 200px;
 }
-.leftView{
+
+.leftView {
   width: 400px;
   background-color: #f5ece1;
   padding-top: 50px;
@@ -98,13 +128,15 @@
   box-shadow: -20px 20px 40px #0003;
   /* border: 1px solid; */
 }
-.rightView{
+
+.rightView {
   width: 400px;
   padding-left: 30px;
   /* border: 1px solid; */
 
 }
-.socialIconContainer{
+
+.socialIconContainer {
   width: 100%;
   height: 50px;
   background-color: #fff;
@@ -112,18 +144,22 @@
   justify-content: center;
   align-items: center;
 }
-.hr{
+
+.hr {
   width: 100px;
 }
-.hello{
+
+.hello {
   font-size: 4.5rem;
   /* line-height: 1rem; */
 }
-.subline{
+
+.subline {
   font-size: 20px;
   font-weight: 400;
 }
-button{
+
+button {
   background-color: #6241f3;
   padding: 5px 25px;
   border-radius: 50px;
@@ -134,31 +170,35 @@ button{
   font-size: 14px;
   font-weight: 500;
 }
-button:hover{
+
+button:hover {
   background-color: #fff;
-  border: 1px solid #000 ;
+  border: 1px solid #000;
   color: #000;
   transition: 0.5s;
 }
-.iconBox{
-width: 40%;
-height: 100%;
-display: flex;
+
+.iconBox {
+  width: 40%;
+  height: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.role{
+
+.role {
   margin-top: 20px;
   font-size: 19px;
 }
-.skills{
+
+.skills {
   font-family: 'Courier Prime', monospace;
   font-size: 10px;
   margin-bottom: 30px;
 }
 
 /* footer -------------------------------------------------------------- */
-.footercontainer{
+.footercontainer {
   /* border: 1px solid; */
   padding-top: 20px;
   padding-bottom: 20px;
@@ -169,20 +209,23 @@ display: flex;
   padding-right: 5%;
   background-color: #fff;
 }
-.copyright{
+
+.copyright {
   font-family: 'Courier Prime', monospace;
   margin: 0px;
   font-size: 12px;
-  
+
 }
-.footerright{
+
+.footerright {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50%;
   /* border: 1px solid; */
 }
-.footerHeading{
+
+.footerHeading {
   font-family: 'Courier Prime', monospace;
   margin: 0px;
   font-size: 12px;
@@ -191,8 +234,9 @@ display: flex;
   text-align: center;
   /* border: 1px solid; */
 }
+
 /* resume ---------------------------------------------------------------------- */
-.ResumeCountainer{
+.ResumeCountainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,32 +246,37 @@ display: flex;
   padding-bottom: 20px;
   background-color: #e6dace;
 }
-.mainViewForResume{
+
+.mainViewForResume {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.resume{
+
+.resume {
   font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
-.btnContainer{
+
+.btnContainer {
   display: flex;
   /* flex-direction: column; */
-  justify-content: space-between    ;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
   margin: 0;
 }
-.Experience{
+
+.Experience {
   font-size: 25px;
   font-weight: 700;
 }
-.experionceContainer{
+
+.experionceContainer {
   width: 90%;
   background-color: #fff;
   padding: 70px 50px;
@@ -235,12 +284,83 @@ display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 100px;
-  
+
   box-shadow: -20px 20px 30px #0002;
 }
-.ComponyInfo{
+
+.ComponyInfo {
   width: 30%;
 }
-.RoleInfo{
+
+.RoleInfo {
   width: 50%;
+}
+
+.CommonBoxCompMainView {
+  width: 90%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  box-shadow: -20px 20px 30px #0002;
+}
+
+@media only screen and (min-width: 600px) {
+  /* ------------------------------------------------home or about page ------------------------------------------------------ */
+  .absolutebg {   
+    width: 80%;   
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* ------------------------------------------------home or about page ------------------------------------------------------ */
+  .absolutebg {   
+    width: 95%;   
+  }
+
+  
+.mainView {
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+.userImageContainer {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userImage {
+  width: 200px;
+}
+
+.leftView {
+  width: 400px;
+  background-color: #f5ece1;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -20px 20px 40px #0003;
+  /* border: 1px solid; */
+}
+
+.rightView {
+  width: 400px;
+  padding-left: 30px;
+  /* border: 1px solid; */
+
+}
+
+.socialIconContainer {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 }
