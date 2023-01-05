@@ -9,15 +9,15 @@ const Experionce = ({ time, position, componyName, location, description, compan
                     ?
                     : null
             } */}
-             <img className="company-logo-on-card" src={require("../images/nrt-logo.png")} alt={"company-logo"} width={"100%"} />
+            {/* <img className="company-logo-on-card" src={require("../images/nrt-logo.png")} alt={"company-logo"} width={"100%"} /> */}
             <div className="ComponyInfo">
                 <h3 className="card_header">{time}</h3>
-                <p>{position}</p>
-                <p>{componyName}</p>
-                <p>{location}</p>
+                <p className="position">{position}</p>
+                <p className="normal_text">{componyName}</p>
+                <p className="normal_text">{location}</p>
             </div>
             <div className="RoleInfo">
-                <p>{description}</p>
+                <p className="normal_text">{description}</p>
             </div>
         </div>
     )

@@ -15,7 +15,6 @@ const Resume = () => {
                             Dowanload CV
                         </button>
                     </NavLink>
-
                 </div>
                 <Experionce
                     company_logo={"../images/nrt-logo.png"}
