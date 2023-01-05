@@ -1,9 +1,9 @@
 import React from "react";
 
-const Experionce = ({ time, position, componyName, location, description, company_logo }) => {
+const Experience = ({ time, position, componyName, location, description, company_logo }) => {
 
     return (
-        <div className="experionceContainer">
+        <div className="experienceContainer experienceContainer_d_f-r">
             {/* {
                 company_logo
                     ?
@@ -22,4 +22,4 @@ const Experionce = ({ time, position, componyName, location, description, compan
         </div>
     )
 }
-export default Experionce
+export default Experience
