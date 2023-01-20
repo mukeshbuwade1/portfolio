@@ -13,6 +13,22 @@
   border: 2px solid red;
 }
 
+.cursor{
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  transition: 0.1s;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  z-index: 999;
+}
+p:hover ~ cursor{
+  background-color: #fff;
+  border: 1px solid blue;
+}
+
 /* common------------------------- */
 #basecontainer {
   display: flex;
