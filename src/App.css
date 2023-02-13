@@ -185,6 +185,14 @@ button:hover {
   align-items: center;
 }
 
+a {
+  color:  #000;
+}
+.social-icons:hover {
+  cursor: pointer;
+  color:  #6241f3;
+}
+
 .role {
   margin-top: 20px;
   font-size: 19px;

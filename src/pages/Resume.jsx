@@ -10,11 +10,11 @@ const Resume = () => {
                 <SecondaryHeader title={"RESUME"} />
                 <div className="btnContainer" >
                     <p className="Experience">Experience</p>
-                    <NavLink to="/login">
+                    <a href="https://drive.google.com/uc?export=download&id=1vJTuvXpFg4JQ2O9sNKaYHaJvAe8KE6l4">
                         <button >
                             Dowanload CV
                         </button>
-                    </NavLink>
+                    </a>
                 </div>
                 <Experionce
                     company_logo={"../images/nrt-logo.png"}

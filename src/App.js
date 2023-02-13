@@ -13,19 +13,20 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Component from './components/Component';
+import Tets from './pages/Tets';
 
 const name = "mukesh"
 function App() {
   return (
-    // <Resume />
-    <div >
+    <div  >
+      
       <Router >
         <Header />
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path='/login' element={Login} />
         </Routes>
         <Footer />
