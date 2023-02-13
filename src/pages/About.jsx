@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 
 
 const About = () => {
+    function externalLink() {
+        alert("opps")
+    }
     return (
         <div className="aboutCountainer">
             <div className="absolutebg" ></div>
@@ -20,13 +23,11 @@ const About = () => {
                     <p className="skills">React Native(Android)||React JS</p>
                     <div className="socialIconContainer">
                         <div className="iconBox">
-                            <a href="https://www.linkedin.com/in/mukeshbuwade/" 
-                            target="_blank" rel="noopener noreferrer" 
-                            className="social-icons"><LinkedIn  /></a>
-                            <a href="https://www.facebook.com/om.buwade/" target="_blank" rel="noopener noreferrer" className="social-icons"><Facebook  /></a>
-                            <a href="https://wa.me/9770675479?text=hi" target="_blank" rel="noopener noreferrer" className="social-icons"><WhatsApp  /></a>
-                            <a href="https://www.instagram.com/website_tutorials/" target="_blank" rel="noopener noreferrer" className="social-icons"><Instagram  /></a>
-                        </div>
+                            <a className="social-icon" href="https://www.linkedin.com/in/mukesh-buwade-278476197/" target="_blank" rel="noopener noreferrer"> <LinkedIn /></a>
+                            <a className="social-icon" href="https://www.facebook.com/om.buwade/" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                            <a className="social-icon" href="https://api.whatsapp.com/send?phone=919770675479&text=Hello" target="_blank" rel="noopener noreferrer"> <WhatsApp /></a>
+                            <a className="social-icon" href="https://instagram.com/mr.mukesh_4?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+                            </div>
                     </div>
                 </div>
                 <div className="rightView">
@@ -40,7 +41,7 @@ const About = () => {
                         <button > PROJECTS </button>
                         </Link>
                     </div>
-                    <p style={{ fontSize: "15px", fontWeight: "100",textAlign:"justify" }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done
+                    <p style={{ fontSize: "15px", fontWeight: "100", textAlign: "justify" }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done
                     </p>
                 </div>
             </div>

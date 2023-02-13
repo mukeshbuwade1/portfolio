@@ -6,6 +6,7 @@ import CommonBoxComp from "../components/CommonBoxComp";
 
 const Contact = () => {
     const initialFormKeys = {
+        fullName: "fullName",
         firstName: "firstName",
         lastName: "lastName",
         email: "email",
@@ -14,6 +15,7 @@ const Contact = () => {
 
     };
     const initialFormValues = {
+        fullName: "",
         firstName: "",
         lastName: "",
         email: "",
@@ -37,7 +39,7 @@ const Contact = () => {
                 <SecondaryHeader title={"LET'S talk"} />
                 <CommonBoxComp>
                     <div style={{ margin: "3rem", width: "100%" }}>
-                        <div style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                        {/* <div style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <InputeComponent
                                 title={"First Name*"}
                                 value={formValues.firstName}
@@ -58,12 +60,23 @@ const Contact = () => {
                                 }}
                                 inputBoxStyle={{ width: "50%" }}
                             />
-                        </div>
+                        </div> */}
+
+                        <InputeComponent
+                            title={"Full Name*"}
+                            value={formValues.fullName}
+                            placeholder={"Mukesh Buwade"}
+                            isValid={isInvalid}
+                            onChange={(event) => {
+                                setFormValues({ ...formValues, fullName: event.target.value })
+                            }}
+                            inputBoxStyle={{ width: "100%" , }}
+                        />
 
                         <InputeComponent
                             title={"Email*"}
                             value={formValues.email}
-                            placeholder={""}
+                            placeholder={"mukesh@mail.com"}
                             isValid={isInvalid}
                             onChange={(event) => {
                                 setFormValues({ ...formValues, email: event.target.value })
@@ -74,7 +87,7 @@ const Contact = () => {
                         <InputeComponent
                             title={"Subject"}
                             value={formValues.subject}
-                            placeholder={""}
+                            placeholder={"Subject line"}
                             isValid={isInvalid}
                             onChange={(event) => {
                                 setFormValues({ ...formValues, subject: event.target.value })
@@ -82,14 +95,14 @@ const Contact = () => {
                             inputBoxStyle={{ width: "100%" }}
                         />
 
-                        <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", width:"100%" }}>
+                        <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", width: "100%" }}>
                             <label style={{ fontSize: "14px", fontWeight: "600" }}>Message</label>
-                            <textarea 
-                             style={{height:"90px",border:"none",outline:"none ",borderBottom:"1px solid black",}}
-                             />
+                            <textarea
+                               placeholder="Hi, Mukesh" style={{ height: "90px", border: "none", outline: "none ", borderBottom: "1px solid black", }}
+                            />
                         </div>
-                        <div style={{marginTop:"2rem", marginBottom:"3rem"}}>
-                        <button type="submit" >Send</button>
+                        <div style={{ marginTop: "2rem", marginBottom: "3rem" }}>
+                            <button type="submit" >Send</button>
                         </div>
                     </div>
 

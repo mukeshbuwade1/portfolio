@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,11 +15,26 @@ import Login from './pages/Login';
 import Component from './components/Component';
 import Tets from './pages/Tets';
 
-const name = "mukesh"
+
 function App() {
+  const [mousePosition, setMousePosition] = React.useState({
+    x: 0,
+    y: 0
+  })
+
+  useEffect(() => {
+    const mouseMoveFun = e => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      })
+    }
+    window.addEventListener("mousemove", mouseMoveFun);
+    return () => window.removeEventListener("mousemove", mouseMoveFun);
+  }, [])
+
   return (
-    <div  >
-      
+    <div >
       <Router >
         <Header />
         <Routes>
@@ -30,7 +45,12 @@ function App() {
           <Route path='/login' element={Login} />
         </Routes>
         <Footer />
-      </Router> 
+      </Router>
+      <div className='cursor' style={{
+        // transform:`translate(${mousePosition.x}px,${mousePosition.y}px )`
+        top: mousePosition.y + "px",
+        left: mousePosition.x + "px",
+      }} />
     </div>
   );
 }
