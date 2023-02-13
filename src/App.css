@@ -17,17 +17,17 @@
   position: fixed;
   width: 20px;
   height: 20px;
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   transition: 0.1s;
   transform: translate(-50%,-50%);
   pointer-events: none;
   z-index: 999;
 }
-p:hover ~ cursor{
+/* p:hover ~ cursor{
   background-color: #fff;
   border: 1px solid blue;
-}
+} */
 
 /* common------------------------- */
 #basecontainer {
@@ -159,7 +159,14 @@ p {
   justify-content: center;
   align-items: center;
 }
-
+.social-icon{
+  color: #c5905a;
+  /* background-color: #c5905a; */
+}
+.social-icon-footer{
+  color: #333;
+  /* background-color: #c5905a; */
+}
 .hr {
   width: 100px;
 }
@@ -179,19 +186,19 @@ p {
 }
 
 button {
-  background-color: #6241f3;
+  background-color: #c5905a;
   padding: 5px 25px;
   /* border-radius: 50px; */
   margin-right: 10px;
   outline: none;
-  border: 1px solid #6241f3;
+  border: 1px solid #c5905a;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
 }
 
 button:hover {
-  background-color: #fff;
+  background-color: #fff0;
   border: 1px solid #000;
   color: #000;
   transition: 0.5s;
@@ -295,7 +302,7 @@ button:hover {
 }
 
 .Experience {
-  color: #6241f3;
+  color: #c5905a;
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 0;
@@ -303,7 +310,8 @@ button:hover {
 
 .experienceContainer {
   width: 90%;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: #f9f5f0;
   padding: 70px 50px;
   display: flex;
   justify-content: space-between;
