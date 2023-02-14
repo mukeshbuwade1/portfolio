@@ -3,12 +3,7 @@ import logo from "../images/user.jpeg"
 import { LinkedIn, Facebook, WhatsApp, Instagram } from "@material-ui/icons"
 import { Link } from "react-router-dom";
 
-
-
 const About = () => {
-    function externalLink() {
-        alert("opps")
-    }
     return (
         <div className="aboutCountainer">
             <div className="absolutebg" ></div>
