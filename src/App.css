@@ -5,6 +5,18 @@
   background-color: #E6DACE;
 }
 
+.loader-container{
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100vh;
+  /* background-color:rgba(197, 144, 90,0.7); */
+  background-color:#ffffffba;
+ 
+}
+
 .demo {
   flex-direction: row;
 }

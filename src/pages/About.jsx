@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../images/user.jpeg"
 import { LinkedIn, Facebook, WhatsApp, Instagram } from "@material-ui/icons"
 import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebase-config";
+import { useDispatch, useSelector } from "react-redux";
+import { updateAbout } from "../redux/aboutSlice";
+import Loader from "../components/Loader";
 
 const About = () => {
+    const projectCollectionRef = collection(db, "about")
+    const [about, setAbout] = useState({});
+    const [loading,setLoading] = useState(false)
+    const dispatch = useDispatch()
+    const redux_about = useSelector((state) => state.about)
+    
+    async function getAbout() {
+        setLoading(true)
+        try {
+            const data = await getDocs(projectCollectionRef)
+            dispatch(updateAbout(data.docs[0].data()))
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
+        }
+    }
+
+    useEffect(() => {
+        if (redux_about) setAbout(redux_about)
+        else getAbout()
+    }, [redux_about])
     return (
         <div className="aboutCountainer">
+              {loading?<Loader/>:null}
             <div className="absolutebg" ></div>
             <div className="mainView">
                 <div className="leftView">
@@ -22,7 +50,7 @@ const About = () => {
                             <a className="social-icon" href="https://www.facebook.com/om.buwade/" target="_blank" rel="noopener noreferrer"><Facebook /></a>
                             <a className="social-icon" href="https://api.whatsapp.com/send?phone=919770675479&text=Hello" target="_blank" rel="noopener noreferrer"> <WhatsApp /></a>
                             <a className="social-icon" href="https://instagram.com/mr.mukesh_4?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer"><Instagram /></a>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="rightView">
@@ -30,10 +58,10 @@ const About = () => {
                     <h3 className="subline">Here's who I am & what I do</h3>
                     <div className="home_btn_container">
                         <Link to={"/resume"}>
-                        <button > RESUME </button>
+                            <button > RESUME </button>
                         </Link>
                         <Link to={"/projects"}>
-                        <button > PROJECTS </button>
+                            <button > PROJECTS </button>
                         </Link>
                     </div>
                     <p style={{ fontSize: "15px", fontWeight: "100", textAlign: "justify" }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done

@@ -1,76 +1,40 @@
-import React from "react";
+import { collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Experience from "../components/Experience";
+import Loader from "../components/Loader";
 import SecondaryHeader from "../components/SecondaryHeader";
-import { NavLink } from "react-router-dom";
 import SkillContainer from "../components/SkillContainer";
-
-const languages = [
-    "JavaScript", "TypeScript", "ECMAScript 6", "HTML5", "CSS6", "PYTHON"
-]
-const libraries = [
-    "React Native", "React JS", "Node JS", "Wordpress", "Shopify",
-]
-const tools = [
-    "Redux", "BitBucket", "Git", "GitHub", "Postman", "Android Studio", 'VS Code', "Canva", "Figma"
-]
-
-let experienceArr = [
-    {
-        image: "../images/nrt-logo.png",
-        duration: "Oct,2021 - Present",
-        position: "Jr. React Native Developer",
-        name: "NewRise Technosys Pvt Ltd",
-        location: "Bhopal (MP), India",
-        description: `• design and implement user Interface using React Native and JavaScript
-        • Build clean UIs across multiple mobile platforms adhering to client specifications
-        • Accessing platform-specific APIs using Native Modules
-        • Worked with REST API’s and Web-sockets to render dynamic data
-        • Simplify Development using Redux, Postman, Bitbucket, and Git`
-    }
-]
-let internshipArr = [
-    {
-        image: "../images/nrt-logo.png",
-        duration: "Feb,2019 - Jul,2019",
-        position: "Full Stack Development",
-        name: "HPE Education Service",
-        location: "Bhopal (MP), India",
-        description: `• Full stack development in React Js and python
-        • Familiar with web technologies and their fundamentals.
-        • Works on technologies like HTML5, CSS3, Bootstrap,
-        • JavaScript, react.js, css animations, Responsive design, and Django(Python).`
-    }
-]
-let educationArr = [
-    {
-        image: "../images/nrt-logo.png",
-        duration: "2017 - 2021",
-        position: "Bachelor of Technology",
-        name: "Computer Science and Engineering",
-        location: "RGPV University, Bhopal",
-        description: "I'm a paragraph. Click here to add your own text and edit me.  It’s easy. Just click “Edit Text” or double click me to add your own content  and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you."
-    },
-    {
-        image: "../images/nrt-logo.png",
-        duration: "2015 - 2017",
-        position: "12TH",
-        name: "Maths(Science)",
-        location: "MP Board, Bhopal, India",
-        description: "I'm a paragraph. Click here to add your own text and edit me.  It’s easy. Just click “Edit Text” or double click me to add your own content  and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you."
-    },
-    {
-        image: "../images/nrt-logo.png",
-        duration: "2013 - 2015",
-        position: "10TH",
-        name: "All Subject",
-        location: "MP Board, Bhopal, India",
-        description: "I'm a paragraph. Click here to add your own text and edit me.  It’s easy. Just click “Edit Text” or double click me to add your own content  and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you."
-    }
-]
+import { db } from "../firebase/firebase-config";
+import { updateResumeData } from "../redux/resumeSlice";
+import { languages, libraries, tools, experience, internship, education } from "../temp_data/resume"
 
 const Resume = () => {
+    const projectCollectionRef = collection(db, "resume")
+    const [resumeData, setResumeData] = useState({languages, libraries, tools, experience, internship, education});
+    const [loading,setLoading] = useState(false)
+    const dispatch = useDispatch()
+    const resume_data = useSelector((state) => state.resume)
+
+    async function getResumeData() {
+        setLoading(true)
+        try {
+            const data = await getDocs(projectCollectionRef)
+            dispatch(updateResumeData(data.docs[0].data()));
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
+        }
+    }
+
+    useEffect(() => {
+        if (resume_data) setResumeData(resume_data)
+        else getResumeData()
+    }, [resume_data])
     return (
         <div id="basecontainer">
+             {loading?<Loader/>:null}
             <div className="mainViewForResume">
                 <SecondaryHeader title={"RESUME"} />
                 <div className="btnContainer" >
@@ -82,8 +46,9 @@ const Resume = () => {
                     </a>
                 </div>
                 {
-                    experienceArr.map((e, i) => (
+                    resumeData?.experience?.map((e, i) => (
                         <Experience
+                            key={i}
                             company_logo={e.image}
                             time={e.duration}
                             position={e.position}
@@ -101,8 +66,9 @@ const Resume = () => {
                 </div>
 
                 {
-                    internshipArr.map((e, i) => (
+                    resumeData?.internship?.map((e, i) => (
                         <Experience
+                            key={i}
                             company_logo={e.image}
                             time={e.duration}
                             position={e.position}
@@ -119,8 +85,9 @@ const Resume = () => {
                 </div>
 
                 {
-                    educationArr.map((e, i) => (
+                    resumeData?.education?.map((e, i) => (
                         <Experience
+                            key={i}
                             company_logo={e.image}
                             time={e.duration}
                             position={e.position}
@@ -138,15 +105,15 @@ const Resume = () => {
                 <div className="experienceContainer experienceContainer_d_f-c">
                     <SkillContainer
                         title={"Language"}
-                        arr={languages}
+                        arr={resumeData?.languages??[]}
                     />
                     <SkillContainer
                         title={"Libraries/Frameworks"}
-                        arr={libraries}
+                        arr={resumeData?.libraries??[]}
                     />
                     <SkillContainer
                         title={"Tools"}
-                        arr={tools}
+                        arr={resumeData?.tools??[]}
                     />
                 </div>
             </div>

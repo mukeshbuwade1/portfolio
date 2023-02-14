@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LinkedIn, Facebook, WhatsApp, Instagram } from "@material-ui/icons"
+import { LinkedIn, Facebook,  Instagram } from "@material-ui/icons"
 
 const Footer = () => {
     return (

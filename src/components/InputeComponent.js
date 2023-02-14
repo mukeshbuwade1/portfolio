@@ -9,7 +9,10 @@ const InputeComponent = (props) => {
                 placeholder={props.placeholder ?? ""}
                 value={props.value ?? ""}
                 onChange={props.onChange}
-            />
+                type={props?.type?? "text"}
+                name={props.name}
+                required={props?.required? true:false}
+            />            
         </div>
     )
 }

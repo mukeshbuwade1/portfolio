@@ -12,8 +12,6 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Login from './pages/Login';
-import Component from './components/Component';
-import Tets from './pages/Tets';
 
 
 function App() {
@@ -34,7 +32,7 @@ function App() {
   }, [])
 
   return (
-    <div >
+    <div >    
       <Router >
         <Header />
         <Routes>
