@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LinkedIn, Facebook,  Instagram } from "@material-ui/icons"
+import { LinkedIn, GitHub, Instagram } from "@material-ui/icons"
 
 const Footer = () => {
     return (
@@ -24,7 +24,8 @@ const Footer = () => {
                     <p className="footerHeading">Follow</p>
                     <div className="iconBox">
                         <a className="social-icon-footer" href="https://www.linkedin.com/in/mukesh-buwade-278476197/" target="_blank" rel="noopener noreferrer"> <LinkedIn /></a>
-                        <a className="social-icon-footer" href="javascript:alert('Link is not available');" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                        {/* <a className="social-icon-footer" href="javascript:alert('Link is not available');" target="_blank" rel="noopener noreferrer"><Facebook /></a> */}
+                        <a className="social-icon-footer" href="https://github.com/mukeshbuwade1" target="_blank" rel="noopener noreferrer"><GitHub /></a>
                         <a className="social-icon-footer" href="https://instagram.com/mr.mukesh_4?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer"><Instagram /></a>
                     </div>
                 </div>

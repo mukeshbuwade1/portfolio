@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/user.jpeg"
-import { LinkedIn, Facebook, WhatsApp, Instagram } from "@material-ui/icons"
+import { LinkedIn, WhatsApp, Instagram ,GitHub} from "@material-ui/icons"
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
@@ -47,7 +47,8 @@ const About = () => {
                     <div className="socialIconContainer">
                         <div className="iconBox">
                             <a className="social-icon" href="https://www.linkedin.com/in/mukesh-buwade-278476197/" target="_blank" rel="noopener noreferrer"> <LinkedIn /></a>
-                            <a className="social-icon" href="https://www.facebook.com/om.buwade/" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                            {/* <a className="social-icon" href="https://www.facebook.com/om.buwade/" target="_blank" rel="noopener noreferrer"><Facebook /></a> */}
+                            <a className="social-icon" href="https://github.com/mukeshbuwade1" target="_blank" rel="noopener noreferrer"><GitHub /></a>
                             <a className="social-icon" href="https://api.whatsapp.com/send?phone=919770675479&text=Hello" target="_blank" rel="noopener noreferrer"> <WhatsApp /></a>
                             <a className="social-icon" href="https://instagram.com/mr.mukesh_4?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer"><Instagram /></a>
                         </div>

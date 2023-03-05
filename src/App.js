@@ -40,7 +40,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path='/login' element={Login} />
+          <Route path='*' element={<Login/>} />
         </Routes>
         <Footer />
       </Router>

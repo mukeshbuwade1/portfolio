@@ -7,12 +7,17 @@ import SecondaryHeader from "../components/SecondaryHeader";
 import SkillContainer from "../components/SkillContainer";
 import { db } from "../firebase/firebase-config";
 import { updateResumeData } from "../redux/resumeSlice";
-import { languages, libraries, tools, experience, internship, education } from "../temp_data/resume"
+import { languages, libraries, tools, experience, internship, education } from "../temp_data/resume";
+
+import { useLocation } from 'react-router-dom';
+import Education from "../components/Education";
 
 const Resume = () => {
+    const _location = useLocation()
+    console.log("navigate data", _location)
     const projectCollectionRef = collection(db, "resume")
-    const [resumeData, setResumeData] = useState({languages, libraries, tools, experience, internship, education});
-    const [loading,setLoading] = useState(false)
+    const [resumeData, setResumeData] = useState({ languages, libraries, tools, experience, internship, education });
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
     const resume_data = useSelector((state) => state.resume)
 
@@ -34,7 +39,7 @@ const Resume = () => {
     }, [resume_data])
     return (
         <div id="basecontainer">
-             {loading?<Loader/>:null}
+            {loading ? <Loader /> : null}
             <div className="mainViewForResume">
                 <SecondaryHeader title={"RESUME"} />
                 <div className="btnContainer" >
@@ -86,14 +91,22 @@ const Resume = () => {
 
                 {
                     resumeData?.education?.map((e, i) => (
-                        <Experience
+                        // <Experience
+                        //     key={i}
+                        //     company_logo={e.image}
+                        //     time={e.duration}
+                        //     position={e.position}
+                        //     componyName={e.name}
+                        //     location={e.location}
+                        //     description={e.description}
+                        // />
+                        <Education
                             key={i}
                             company_logo={e.image}
                             time={e.duration}
                             position={e.position}
                             componyName={e.name}
                             location={e.location}
-                            description={e.description}
                         />
                     ))
                 }
@@ -105,15 +118,15 @@ const Resume = () => {
                 <div className="experienceContainer experienceContainer_d_f-c">
                     <SkillContainer
                         title={"Language"}
-                        arr={resumeData?.languages??[]}
+                        arr={resumeData?.languages ?? []}
                     />
                     <SkillContainer
                         title={"Libraries/Frameworks"}
-                        arr={resumeData?.libraries??[]}
+                        arr={resumeData?.libraries ?? []}
                     />
                     <SkillContainer
                         title={"Tools"}
-                        arr={resumeData?.tools??[]}
+                        arr={resumeData?.tools ?? []}
                     />
                 </div>
             </div>

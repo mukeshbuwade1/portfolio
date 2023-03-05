@@ -11,7 +11,7 @@ import ProjectData from "../temp_data/projects";
 const Projects = () => {
     const projectCollectionRef = collection(db, "projects")
     const [projects, setProjects] = useState(ProjectData);
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
     const redux_projects = useSelector((state) => state.projects)
 
@@ -21,7 +21,7 @@ const Projects = () => {
             const data = await getDocs(projectCollectionRef)
             const create_data = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
             dispatch(updateProjects(create_data))
-            setLoading(false)            
+            setLoading(false)
         } catch (error) {
             console.log(error)
             setLoading(false)
@@ -36,16 +36,16 @@ const Projects = () => {
 
     return (
         <div id="basecontainer">
-             {loading?<Loader/>:null}
+            {loading ? <Loader /> : null}
             <div className="mainViewForResume">
                 <SecondaryHeader title={"PROJECTS"} />
                 <div style={{ width: "85%", marginBottom: "3rem" }} >
-                    <p style={{ textAlign: "center", fontWeight: "100" }}>
+                    {/* <p style={{ textAlign: "center", fontWeight: "100" }}>
                         I'm a paragraph. Click here to add your own text and edit me. It’s easy.
                         Just click “Edit Text” or double click me to add own content and make changes to the
                         font. I{"’"}m a great place for you to tell a story and let your users know a little more about
                         you.
-                    </p>
+                    </p> */}
                 </div>
 
                 {
@@ -56,14 +56,21 @@ const Projects = () => {
                                     <div className="project_container_left_view">
                                         <div className="project_headline">
                                             <h3 className="project_title">{item.name}</h3>
-                                            <p className="project_role">{item.role}</p>
+                                            <p className="project_role">{item.role}<span className="role-tooltip" >(role in this project)</span> </p>
                                         </div>
-                                        <div style={{ marginTop: "50px", padding: "0 2rem" }}>
+                                        <div style={{ marginTop: "20px", padding: "0 2rem" }}>
                                             <p>{item.description}</p>
+                                            <div className="tech-info">
+                                                {
+                                                    item?.tech?.map((e, i) => <p key={i} className="tech">{i==0?"":", "}#{e}</p>)
+                                                }
+                                            </div>
                                         </div>
-                                        <div className="action_Container">
-                                            <a className="action_btn" href="#">Demo</a>
-                                            <a className="action_btn" href="#">GitHub</a>
+                                        <div className="action_Container mt-10">
+                                            <a
+                                            //  className="action_btn " 
+                                             href="#"> <button>Demo</button></a>
+                                            <a  href="#"> <button>GitHub</button></a>
                                         </div>
                                     </div>
                                     <div className="project_container_right_view">
