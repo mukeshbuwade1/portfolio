@@ -1,6 +1,5 @@
 {
   "name": "my-app",
-  "homepage": "https://mukeshbuwade1.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,13 +23,10 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    
   },
   "eslintConfig": {
     "extends": [
