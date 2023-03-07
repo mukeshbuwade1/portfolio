@@ -106,7 +106,7 @@ const Contact = () => {
                                     setFormValues({ ...formValues, fullName: event.target.value })
                                 }}
                                 inputBoxStyle={{ width: "100%", }}
-                                name={"user_name"}
+                                name={"from_name"}
                                 required={true}
                             />
 
@@ -119,7 +119,7 @@ const Contact = () => {
                                     setFormValues({ ...formValues, email: event.target.value })
                                 }}
                                 inputBoxStyle={{ width: "100%" }}
-                                name={"user_email"}
+                                name={"from_email"}
                                 type={"email"}
                                 required={true}
                             />
