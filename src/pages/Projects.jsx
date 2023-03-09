@@ -50,27 +50,29 @@ const Projects = () => {
 
                 {
                     projects?.map((item, index) => {
+
                         return (
                             <CommonBoxComp key={index}>
                                 <div className="project_container">
                                     <div className="project_container_left_view">
                                         <div className="project_headline">
                                             <h3 className="project_title">{item.name}</h3>
-                                            <p className="project_role">{item.role}<span className="role-tooltip" >(role in this project)</span> </p>
+                                            <p className="project_role">{item.role}<span className="role-tooltip" >(role)</span></p>
                                         </div>
                                         <div style={{ marginTop: "20px", padding: "0 2rem" }}>
                                             <p>{item.description}</p>
                                             <div className="tech-info">
                                                 {
-                                                    item?.tech?.map((e, i) => <p key={i} className="tech">{i==0?"":", "}#{e}</p>)
+                                                    item?.tech?.map((e, i) => <p key={i} className="tech">{i == 0 ? "" : ", "}#{e}</p>)
                                                 }
                                             </div>
                                         </div>
                                         <div className="action_Container mt-10">
                                             <a
-                                            //  className="action_btn " 
-                                             href="#"> <button>Demo</button></a>
-                                            <a  href="#"> <button>GitHub</button></a>
+                                                //  className="action_btn " 
+                                                target={"_blank"} rel="noopener"
+                                                href={item.demo_link ?? "#"}> <button style={item.demo_link ? {} : { backgroundColor: "#d9c6b4", borderColor: "#d9c6b4" }}>Demo</button></a>
+                                            <a target={"_blank"} rel="noopener" href={item.github_link ?? "#"}> <button style={item.demo_link ? {} : { backgroundColor: "#d9c6b4", borderColor: "#d9c6b4" }}>GitHub</button></a>
                                         </div>
                                     </div>
                                     <div className="project_container_right_view">
