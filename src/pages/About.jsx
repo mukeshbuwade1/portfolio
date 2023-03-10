@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/user.jpeg"
-import { LinkedIn, WhatsApp, Instagram ,GitHub} from "@material-ui/icons"
+import { LinkedIn, WhatsApp, Instagram, GitHub } from "@material-ui/icons"
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
@@ -11,10 +11,10 @@ import Loader from "../components/Loader";
 const About = () => {
     const projectCollectionRef = collection(db, "about")
     const [about, setAbout] = useState({});
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
     const redux_about = useSelector((state) => state.about)
-    
+    console.log("redux_about", redux_about)
     async function getAbout() {
         setLoading(true)
         try {
@@ -33,17 +33,17 @@ const About = () => {
     }, [redux_about])
     return (
         <div className="aboutCountainer">
-              {loading?<Loader/>:null}
+            {loading ? <Loader /> : null}
             <div className="absolutebg" ></div>
             <div className="mainView">
                 <div className="leftView">
                     <div className="userImageContainer">
                         <img src={logo} alt="Logo" className="userImage" />;
                     </div>
-                    <h3 style={{ fontSize: "30px", lineHeight: "35px", margin: "20px 0" }}>Mukesh Buwade</h3>
+                    <h3 style={{ fontSize: "30px", lineHeight: "35px", margin: "20px 0" }}>{about?.name ?? "Mukesh Buwade"}</h3>
                     <hr className="hr" />
-                    <p className="role">Front End Developer</p>
-                    <p className="skills">React Native(Android)||React JS</p>
+                    <p className="role">{about?.role ?? "Front End Developer"}</p>
+                    <p className="skills">{about?.tech ?? "React Native(Android)||React JS"}</p>
                     <div className="socialIconContainer">
                         <div className="iconBox">
                             <a className="social-icon" href="https://www.linkedin.com/in/mukesh-buwade-278476197/" target="_blank" rel="noopener noreferrer"> <LinkedIn /></a>
@@ -55,8 +55,8 @@ const About = () => {
                     </div>
                 </div>
                 <div className="rightView">
-                    <h1 className="hello">Hello</h1>
-                    <h3 className="subline">Here's who I am & what I do</h3>
+                    <h1 className="hello">{about?.title ?? "Hello"}</h1>
+                    <h3 className="subline">{about?.sub_title ?? `Here's who I am & what I do`}</h3>
                     <div className="home_btn_container">
                         <Link to={"/resume"}>
                             <button > RESUME </button>
@@ -65,8 +65,7 @@ const About = () => {
                             <button > PROJECTS </button>
                         </Link>
                     </div>
-                    <p style={{ fontSize: "15px", fontWeight: "100", textAlign: "justify" }}> I have several years experience in Computer Literacy, currently I am studying my A-Levels. My goal is to be able to apply myself and get the best grades possible while doing so. If I do not know how to solve a problem or get something done, it will be my privilege to learn how to find the solution and get it done
-                    </p>
+                    <p style={{ fontSize: "15px", fontWeight: "100", textAlign: "justify" }}>{about?.paragraph}</p>
                 </div>
             </div>
 
