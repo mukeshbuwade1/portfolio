@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# wellcome buddy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This portfolio website showcases the best of my work, from web design to graphic design. It features a modern, minimalistic design and is easy to navigate. It includes an overview of my skills, a portfolio of my projects, and contact information. With this portfolio website, I hope to demonstrate my creativity and technical abilities, and to help potential employers and clients get a better understanding of my capabilities.
 
-## Available Scripts
+## take a look of my web app
 
-In the project directory, you can run:
+https://mukesh-buwade.netlify.app
 
 ### `npm start`
 
